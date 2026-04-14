@@ -1,7 +1,8 @@
 import { NavLink, Outlet, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import ScrollNavigator from "../ui/ScrollNavigator";
-import "../../styles/SiteLayout.css";
+import "../../styles/siteLayout.css";
+// import "../../styles/SiteLayout.css";
 
 const navItems = [
   { to: "/", label: "Home", end: true },

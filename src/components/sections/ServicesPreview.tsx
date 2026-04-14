@@ -1,5 +1,6 @@
 import SectionTitle from "../ui/SectionTitle";
-import "../../styles/ServicesPreview.css";
+import "../../styles/servicesPreview.css";
+// import "../../styles/ServicesPreview.css";
 
 const services = [
   {

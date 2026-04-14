@@ -98,7 +98,8 @@
 //   );
 // }
 
-import "../../styles/ITServicesSection.css";
+// import "../../styles/ITServicesSection.css";
+import "../../styles/itServicesSection.css";
 
 const points = [
   "Étude, conseil et développement de solutions informatiques spécifiques.",

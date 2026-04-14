@@ -1,6 +1,7 @@
 import SectionTitle from "../ui/SectionTitle";
 import Button from "../ui/Button";
-import "../../styles/AboutPreview.css";
+import "../../styles/aboutPreview.css";
+// import "../../styles/AboutPreview.css";
 
 export default function AboutPreview() {
   return (
