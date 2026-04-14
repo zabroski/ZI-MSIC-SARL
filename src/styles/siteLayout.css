@@ -378,7 +378,6 @@ img {
   color: var(--text-muted);
   font-size: 1.05rem;
   line-height: 1.8;
-  text-wrap: pretty;
 }
 
 @media (max-width: 960px) {
