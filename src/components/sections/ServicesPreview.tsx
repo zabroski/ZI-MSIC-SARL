@@ -1,4 +1,5 @@
 import SectionTitle from "../ui/SectionTitle";
+import "../../styles/ServicesPreview.css";
 
 const services = [
   {
@@ -21,21 +22,23 @@ const services = [
 
 export default function ServicesPreview() {
   return (
-    <section className="section sectionAlt">
-      <div className="container">
-        <SectionTitle
-          eyebrow="Nos expertises"
-          title="Des services techniques complets pour les entreprises"
-          text="Nous proposons des prestations adaptées à vos besoins opérationnels, techniques et sécuritaires."
-          centered
-        />
+    <section className="servicesPreview">
+      <div className="servicesPreview__container">
+        <div className="servicesPreview__heading">
+          <SectionTitle
+            eyebrow="Nos expertises"
+            title="Des services techniques complets pour les entreprises"
+            text="Nous proposons des prestations adaptées à vos besoins opérationnels, techniques et sécuritaires."
+            centered
+          />
+        </div>
 
-        <div className="cardGrid">
+        <div className="servicesPreview__grid">
           {services.map((service) => (
-            <article className="serviceCard" key={service.title}>
-              <div className="serviceIcon">◆</div>
-              <h3>{service.title}</h3>
-              <p>{service.text}</p>
+            <article className="servicesPreview__card" key={service.title}>
+              <div className="servicesPreview__icon">◆</div>
+              <h3 className="servicesPreview__cardTitle">{service.title}</h3>
+              <p className="servicesPreview__cardText">{service.text}</p>
             </article>
           ))}
         </div>

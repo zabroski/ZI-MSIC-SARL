@@ -28,6 +28,7 @@ export default function Navbar() {
           <NavLink to="/contact" className="navLink navCta">
             Contact
           </NavLink>
+          <Link to="/presentation">Présentation</Link>
         </nav>
 
         <button

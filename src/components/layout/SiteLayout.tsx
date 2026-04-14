@@ -1,40 +1,95 @@
-// import { Outlet } from "react-router-dom";
-// import Navbar from "./Navbar";
-// import Footer from "./Footer";
+import { NavLink, Outlet, useLocation } from "react-router-dom";
+import { useEffect, useState } from "react";
+import ScrollNavigator from "../ui/ScrollNavigator";
+import "../../styles/SiteLayout.css";
 
-// export default function SiteLayout() {
-//   return (
-//     <div className="siteShell">
-//       <Navbar />
-//       <main>
-//         <Outlet />
-//       </main>
-//       <Footer />
-//     </div>
-//   );
-// }
-
-import { Outlet, Link } from "react-router-dom";
+const navItems = [
+  { to: "/", label: "Home", end: true },
+  { to: "/about", label: "About" },
+  { to: "/services", label: "Services" },
+  { to: "/presentation", label: "Présentation" },
+  { to: "/contact", label: "Contact" },
+];
 
 export default function SiteLayout() {
-  return (
-    <div>
-      <nav style={{ padding: "20px", borderBottom: "1px solid #333" }}>
-        <Link to="/" style={{ marginRight: 12 }}>
-          Home
-        </Link>
-        <Link to="/about" style={{ marginRight: 12 }}>
-          About
-        </Link>
-        <Link to="/services" style={{ marginRight: 12 }}>
-          Services
-        </Link>
-        <Link to="/contact">Contact</Link>
-      </nav>
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const location = useLocation();
 
-      <main style={{ padding: "40px" }}>
+  useEffect(() => {
+    setMobileOpen(false);
+  }, [location.pathname]);
+
+  return (
+    <div className="siteLayout">
+      <header className="siteHeader">
+        <div className="siteHeader__inner">
+          <NavLink to="/" className="siteBrand">
+            <div className="siteBrand__mark">ZI</div>
+            <div className="siteBrand__text">
+              <span className="siteBrand__title">ZI MSIC SARL</span>
+              <span className="siteBrand__subtitle">
+                Solutions IT · Énergie · Services
+              </span>
+            </div>
+          </NavLink>
+
+          <nav className="siteNav" aria-label="Main navigation">
+            {navItems.map((item) => (
+              <NavLink
+                key={item.to}
+                to={item.to}
+                end={item.end}
+                className={({ isActive }) =>
+                  isActive
+                    ? "siteNav__link siteNav__link--active"
+                    : "siteNav__link"
+                }
+              >
+                {item.label}
+              </NavLink>
+            ))}
+          </nav>
+
+          <button
+            type="button"
+            className={`siteMenuButton ${mobileOpen ? "siteMenuButton--open" : ""}`}
+            aria-label={mobileOpen ? "Close menu" : "Open menu"}
+            aria-expanded={mobileOpen}
+            onClick={() => setMobileOpen((prev) => !prev)}
+          >
+            <span />
+            <span />
+            <span />
+          </button>
+        </div>
+
+        <div
+          className={`siteMobilePanel ${mobileOpen ? "siteMobilePanel--open" : ""}`}
+        >
+          <nav className="siteMobileNav" aria-label="Mobile navigation">
+            {navItems.map((item) => (
+              <NavLink
+                key={item.to}
+                to={item.to}
+                end={item.end}
+                className={({ isActive }) =>
+                  isActive
+                    ? "siteMobileNav__link siteMobileNav__link--active"
+                    : "siteMobileNav__link"
+                }
+              >
+                {item.label}
+              </NavLink>
+            ))}
+          </nav>
+        </div>
+      </header>
+
+      <main className="siteMain">
         <Outlet />
       </main>
+
+      <ScrollNavigator />
     </div>
   );
 }
