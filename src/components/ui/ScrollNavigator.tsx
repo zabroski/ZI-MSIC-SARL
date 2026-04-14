@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
-import "../../styles/ScrollNavigator.css";
+import "../../styles/scrollNavigator.css";
+// import "../../styles/ScrollNavigator.css";
 
 export default function ScrollNavigator() {
   const [scrollY, setScrollY] = useState(0);
