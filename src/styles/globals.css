@@ -252,11 +252,16 @@ textarea {
 }
 
 .sectionTitle h2 {
-  color: #f4eded;
+  /* color: #111827 !important; */
   margin: 0 0 12px;
   font-size: clamp(1.9rem, 3vw, 3rem);
   line-height: 1.1;
   letter-spacing: -0.03em;
+}
+
+
+.servicesPreview .sectionTitle__title {
+  color: rgba(255, 255, 255, 0.95);
 }
 
 .sectionTitle p {
@@ -561,3 +566,26 @@ textarea {
     display: none;
   }
 }
+
+
+
+
+
+/* 
+.servicesPreview__title {
+  color: #ffffff;
+  font-size: 2.2rem;
+}
+
+.servicesPreview__text {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.servicesPreview__eyebrow {
+  color: #38bdf8;
+  letter-spacing: 0.1em;
+}
+
+.servicesPreview__heading--custom {
+  margin-bottom: 40px;
+} */
